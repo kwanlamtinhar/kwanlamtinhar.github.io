@@ -78,20 +78,23 @@ var months = [
 function add_months(start,end){
     $('.timeline').append( '<div class="month-wrapper"></div>');
         for (i = start-1; i < end;i++){
-            $('.month-wrapper').last().append( '<div class="month">'+months[i]+'</div>');
-            if(i%2==0) $('.month').last().css("align-self", "flex-end");
-            else $('.month').last().css("align-self", "flex-start");
+            $('.month-wrapper').last().append( '<div class="month"></div>');
+            $('.month').last().append( '<div class="month-text">'+months[i]+'</div>');
+            if(i%2>0) $('.month-text').last().css("transform", "translateX(16px)");
+            else $('.month-text').last().css("transform", "translateX(-100%)");
         }   
 }
 function set_timeline() {
     $('.timeline').append( '<div class="year">'+(2015)+'</div>');
+    add_months(5,5);  
 
     $('.timeline').append( '<div class="year">'+(2016)+'</div>');
     $('.timeline').append( '<div class="month-wrapper"></div>');
     add_months(6,12);  
 
-    for ( i = 0; i < 3;i++){
-        $('.timeline').append( '<div class="year">'+(2017+i)+'</div>');
+    for (j = 0; j < 3; j++){
+        console.log(j);
+        $('.timeline').append( '<div class="year">'+(2017+j)+'</div>');
         add_months(6,12);         
     }
 
@@ -104,7 +107,7 @@ function set_timeline() {
 
 $(document).ready(function() {
     set_timeline();
-    $('.month:not(:last-child)').after('<div class="line"></div>');
+    $('.month:not(:last-child)').after('<img src="img/line.png" height="45px" width="auto" style="margin: 3px">');
 });
 
 $("#match-button").click(function(){

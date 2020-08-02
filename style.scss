@@ -1,20 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 @font-face {
-    font-family: MONO-RGO MODULAR;
-    src: url(font/MONO-RGOMODULAR-Regular.ttf);
-  }
-
-@font-face {
-    font-family: Avenir;
-    src: url(font/AvenirLTStd-Book.otf);
+    font-family: Moon Flower;
+    src: url(font/Moon_Flower_Bold.ttf);
 }
 
 @font-face {
-    font-family: Chalkboard;
-    src: url(font/Chalkboard.ttf);
+    font-family: Hosohuwafont;
+    src: url(font/Hosohuwafont.ttf);
 }
-
 
 $pc-media:960px;
 $pcs-media:959px;
@@ -63,16 +57,28 @@ body {
     }
     background-color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     background-image: url('img/bg.jpeg');
     background-size: cover;
 }
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
 .timeline-container {
-    margin-top: 100px;
+    margin: 5px 0;
     width:80%;
     height:90%;
     overflow-y: scroll;
+    // -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0% ,rgba(0,0,0,1) 10%,rgba(0,0,0,1) 90%,rgba(0,0,0,0) 100%);
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top;
     // background-color: rgba(0,0,0,0.1);
 }
 .timeline-container::-webkit-scrollbar {
@@ -80,18 +86,27 @@ body {
     background: transparent; 
 }
 .timeline {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 200px;
-    font-family: Chalkboard;
-    background-color: rgba(0,0,0,0.1);
+    // background-color: rgba(0,0,0,0.1);
     margin-left: auto;
     margin-right: auto;
 }
 .year {
+    font-family: Hosohuwafont;
     font-size: 35px;
-    margin-top: 50px;
+    margin: 10px;
+}
+.month{
+    background-image: url("img/circle.png");
+    background-size: cover;
+    width:16px;
+    height:16px;
+    display: flex;
+    align-items: center;
 }
 .month-wrapper{
     display: flex;
@@ -100,12 +115,19 @@ body {
     font-size: 30px;
     align-items: center;
 }
-// .month:nth-child(odd){
-//     align-self: flex-end;
-// }
-// .month:nth-child(even){
-//     align-self: flex-start;
-// }
+.month-text{
+    font-family:Moon Flower;
+    padding:0 10px;
+}
+.text-box-wrapper{
+    margin-bottom: 20px;
+    justify-self: flex-end;
+    width:280px;
+    // background-color: red;
+}
+.text-box{
+    height:100px;
+}
 .line{
     height:60px;
     width:20px;

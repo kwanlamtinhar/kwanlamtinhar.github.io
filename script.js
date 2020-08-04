@@ -166,7 +166,25 @@ function preload(arrayOfImages) {
     // console.log(imgAttr);
 }
 
+function set_char(){
+    for(i=1;i<=6;i++){
+        $('.green-img').append('<img class="animate fadeIn ani-slow" src="img/fatgreen'+i+'.png" width="auto" height="100%"></img>');
+        if(i==1) $('.green-img img').last().addClass("animated");
+    }
+}
 
+function change_char(theId,back){
+    // alert('df');
+    id = theId.split("-")[1];
+    // if (back) id--;
+
+    if(theId.split("-")[0]=='green'){
+        // $('.green-img img.animated').removeClass('animated');
+        $('.green-img img').eq(id).addClass('animated');
+        if(back)$('.green-img img').eq(id).removeClass('animated');
+    }
+    
+}
 
 function add_months(year,start,end){
     $('.timeline').append( '<div class="month-wrapper"></div>');
@@ -198,11 +216,21 @@ function set_timeline() {
     $('.timeline').append( '<div class="year">'+(2020)+'</div>');
     add_months(2020,1,8);   
 
+    for(i=0;i<5;i++){
+        $('.timeline').append('<div class="trigger scroll trig-lam"></div>');
+        $('.trigger').last().css("top", 850*i + 400 + "px");
+        $('.trigger').last().attr("id","lam-"+ (i+1));
+
+        $('.timeline').append('<div class="trigger scroll trig-green"></div>');
+        $('.trigger').last().css("top", 850*i + 800+ "px");
+        $('.trigger').last().attr("id","green-"+(i+1));
+    }
+
 };
 
 function set_tag(){
     for (i = 0; i < data.length; i++){
-        $('#'+data[i].date).find('.month-text').append('<div class="tag animate fadeIn ani-fast">'+data[i].tag+'</div>');
+        $('#'+data[i].date).find('.month-text').append('<div class="tag scroll animate fadeIn ani-fast">'+data[i].tag+'</div>');
         $('.tag').last().attr( "id", 'tag-'+i );
         if (data[i].offset) $('.tag').last().css("--offset",data[i].offset);
     }
@@ -213,6 +241,83 @@ function set_slick(a){
         dots: true,
         arrows: false,
       });
+}
+
+function set_scroll() {
+    var controller = new ScrollMagic.Controller({container: ".timeline-container"})
+
+    var scrolls = $(".scroll")
+
+    $('.scroll').each(function(index){
+        var myOffset = 0;
+        if($(this).css("--offset")!="undefined") myOffset = $(this).css("--offset");
+        new ScrollMagic.Scene({
+            triggerElement: scrolls[index],
+            offset: myOffset,												 
+            triggerHook: 0.45,
+    })
+    .setClassToggle(scrolls[index], "animated")
+    .on("enter", function (e) {
+        if($(scrolls[index]).hasClass('tag')) change_content($(scrolls[index]).attr("id"),false);
+        if($(scrolls[index]).hasClass('trigger')) change_char($(scrolls[index]).attr("id"),false);
+    })
+    .on("leave", function (e) {
+        if($(scrolls[index]).hasClass('tag')) change_content($(scrolls[index]).attr("id"),true);
+        if($(scrolls[index]).hasClass('trigger')) change_char($(scrolls[index]).attr("id"),true);
+    })
+    .addIndicators({name}) 
+    .addTo(controller);
+    });
+
+}
+
+var imgCount;
+var imgLength;
+var saveOff;
+
+function change_content(theId,back){
+    id = theId.split("-")[1];
+    if (back) id--;
+
+    if (id==-1) {
+        $(".twins.on").removeClass("on").addClass("off");
+        $(".text-default").removeClass("off").addClass("on");
+        $(".arrow").removeClass("on").addClass("off");
+    }
+    else{
+        $(".arrow.off").removeClass("off").addClass("on");
+        $(".text-default.on").removeClass("on").addClass("off");
+
+            var off = $(".twins.off").first();
+            $(off).find('.text-tag').html(data[id].tag);
+            $(off).find('.text-date').html(data[id].date);
+            $(off).find('.text-content').html(data[id].content);
+            $(off).find('.slick-slider').slick('unslick');
+            $(off).find('.photo').remove();
+            // $(off).find('.slider').empty();
+
+            if(data[id].photo.length>0) {
+                $(off).prepend('<div class="photo"><div class="slider"></div></div>');
+
+                for(i=0;i<data[id].photo.length;i++){
+                    var img = new Image();
+                    img.src = "photo/" +data[id].photo[i];
+                    var mode = imgAttr[img.src];
+                    // console.log(mode);
+                    $(off).find('.slider').append('<div class="slider-img-container"><div class="slider-img-center"><div class="img-transparent-right"><img class="'+mode+' img-transparent-top" src="'+img.src+'"></div></div></div>');
+                }
+
+                if(data[id].photo.length>1) {
+                    set_slick($(off).find('.slider'));
+                    sliderOn = true;
+                }
+
+            }  
+            
+            $(".twins.on").removeClass("on").addClass("off");
+            $(off).removeClass("off").addClass("on");
+         
+    }
 }
 
 $(document).ready(function() {
@@ -236,8 +341,13 @@ $(document).ready(function() {
     $('.twins').clone().appendTo('.content-wrapper');
 
     $('.green').css('bottom', $( window ).height() - $('.bottom').offset().top+'px');
-    
+    set_char();
+
     set_slick('.slider');  
+
+    setTimeout(function() { 
+        $('.green').addClass('animated');
+    }, 500);
 });
 
 $('.arrow').click(function() {
@@ -280,78 +390,3 @@ $('.arrow').click(function() {
 
     bottom_opened = !bottom_opened;
 });
-
-function set_scroll() {
-    var controller = new ScrollMagic.Controller({container: ".timeline-container"})
-
-    var animateElements = $(".animate")
-
-    $('.animate').each(function(index){
-        var myOffset = 0;
-        if($(this).css("--offset")!="undefined") myOffset = $(this).css("--offset");
-        new ScrollMagic.Scene({
-            triggerElement: animateElements[index],
-            offset: myOffset,												 
-            triggerHook: 0.45,
-    })
-    .setClassToggle(animateElements[index], "animated")
-    .on("enter", function (e) {
-        if($(animateElements[index]).hasClass('tag')) change_content($(animateElements[index]).attr("id"));
-    })
-    .on("leave", function (e) {
-        if($(animateElements[index]).hasClass('tag')) change_content($(animateElements[index]).attr("id")-1);
-    })
-    // .addIndicators({name}) 
-    .addTo(controller);
-    });
-
-}
-
-var imgCount;
-var imgLength;
-var saveOff;
-
-function change_content(theId){
-    id = theId.split("-")[1];
-    console.log(id);
-
-    if (id==-1) {
-        $(".twins.on").removeClass("on").addClass("off");
-        $(".text-default").removeClass("off").addClass("on");
-        $(".arrow").removeClass("on").addClass("off");
-    }
-    else{
-        $(".arrow.off").removeClass("off").addClass("on");
-        $(".text-default.on").removeClass("on").addClass("off");
-
-            var off = $(".twins.off").first();
-            $(off).find('.text-tag').html(data[id].tag);
-            $(off).find('.text-date').html(data[id].date);
-            $(off).find('.text-content').html(data[id].content);
-            $(off).find('.slick-slider').slick('unslick');
-            $(off).find('.photo').remove();
-            // $(off).find('.slider').empty();
-
-            if(data[id].photo.length>0) {
-                $(off).prepend('<div class="photo"><div class="slider"></div></div>');
-
-                for(i=0;i<data[id].photo.length;i++){
-                    var img = new Image();
-                    img.src = "photo/" +data[id].photo[i];
-                    var mode = imgAttr[img.src];
-                    // console.log(mode);
-                    $(off).find('.slider').append('<div class="slider-img-container"><div class="slider-img-center"><div class="img-transparent-right"><img class="'+mode+' img-transparent-top" src="'+img.src+'"></div></div></div>');
-                }
-
-                if(data[id].photo.length>1) {
-                    set_slick($(off).find('.slider'));
-                    sliderOn = true;
-                }
-
-            }  
-            
-            $(".twins.on").removeClass("on").addClass("off");
-            $(off).removeClass("off").addClass("on");
-         
-    }
-}

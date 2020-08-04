@@ -58,7 +58,7 @@ body {
     --height: 300px;
     height:var(--height);
     overflow-y: scroll;
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0% ,rgba(0,0,0,1) 10%,rgba(0,0,0,1) 90%,rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0) 0% ,rgba(0,0,0,1) 15%,rgba(0,0,0,1) 70%,rgba(0,0,0,0) 100%);
     -webkit-mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: top;
@@ -66,6 +66,18 @@ body {
 }
 .opened .timeline-container{
     opacity: 0;
+}
+.trigger{
+    position: absolute;
+    width:20px;
+    height:20px;
+}
+.trig-lam{
+    background-color: red;
+}
+.trig-green{
+    background-color: green;
+
 }
 .timeline-container::-webkit-scrollbar {
     // -webkit-appearance: none;
@@ -285,8 +297,16 @@ body {
     right: 13px;
     padding-bottom: 5px;
 }
-.green img{
+.green-img{
+    display: inline-block;
+    height: 135px;
+    position: relative;
     opacity: 0.8;
+    margin-right: 100px;
+}
+.green-img img{
+    position: absolute;
+    top:0;
 }
 .on {
     opacity:1;

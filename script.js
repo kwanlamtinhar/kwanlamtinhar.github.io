@@ -159,8 +159,13 @@ function change_char(theId,back){
 
     if(theId.split("-")[0]=='green'){
         // $('.green-img img.animated').removeClass('animated');
-        $('.green-img img').eq(id).addClass('animated');
         if(back)$('.green-img img').eq(id).removeClass('animated');
+            else $('.green-img img').eq(id).addClass('animated');
+
+        $('.green .mark span.animated').removeClass('animated');
+        if(!back)$('.green .mark span').eq(id).addClass('animated');
+            else $('.green .mark span').eq(id-1).addClass('animated');
+        // if(back)$('.green .mark span').eq(id).removeClass('animated');
     }
     
 }
@@ -256,7 +261,12 @@ var saveOff;
 
 function change_content(theId,back){
     id = theId.split("-")[1];
-    if (back) id--;
+    if (back) {
+        id--;
+        theId=theId.split("-")[0]+'-'+id;
+    }
+
+    if (!back) $('.tag.highlighted').removeClass('highlighted');
 
     if (id==-1) {
         $(".twins.on").removeClass("on").addClass("off");
@@ -264,6 +274,7 @@ function change_content(theId,back){
         $(".arrow").removeClass("on").addClass("off");
     }
     else{
+        $('#'+theId).addClass('highlighted');
         $(".arrow.off").removeClass("off").addClass("on");
         $(".text-default.on").removeClass("on").addClass("off");
 
@@ -332,11 +343,13 @@ $(document).ready(function() {
 
 $('.arrow').click(function() {
     $('.arrow').css("pointer-events","none");
+    $('.arrow').addClass('touched');
     if(!bottom_opened) {
         $(".twins.on").removeClass("ani-mid");
         $(".twins.on").animate({
             opacity: 0,
           }, 300, function() {
+            $('.arrow').removeClass('touched')
             $('.on .slick-slider').slick('refresh');
             $('body').addClass('opened');
             setTimeout(function() { 
@@ -359,6 +372,7 @@ $('.arrow').click(function() {
                 $(".twins.on").animate({
                     opacity: 1,
                   }, 300, function() {
+                $('.arrow').removeClass('touched')
                  $(".twins.on").addClass("ani-mid");
                  $('.arrow').css("pointer-events","unset");
                  $('.timeline-container').css("pointer-events","unset");

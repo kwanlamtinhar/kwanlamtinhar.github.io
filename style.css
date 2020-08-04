@@ -15,24 +15,18 @@ html {
   height: 100%;
   overflow: hidden;
 }
-@media all and (min-width: 500px) {
-  html {
-    height: unset;
-  }
-}
-
 body {
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: black;
   overflow: hidden;
 }
 @media all and (min-width: 500px) {
   body {
-    height: 800px;
+    height: 100%;
     width: 100%;
+    overflow: unset;
+    overflow-y: scroll;
+    padding: 30px 0;
   }
 }
 
@@ -52,6 +46,8 @@ body {
   .myBody {
     width: 414px;
     height: 736px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -299,6 +295,10 @@ body {
   justify-content: center;
 }
 
+.slick-slide, .slick-slide * {
+  outline: none !important;
+}
+
 .opened .slider-img-container {
   height: var(--photoOpenHeight);
 }
@@ -365,14 +365,23 @@ body {
 }
 
 .ani-fast {
+  -webkit-transition: all 0.6s ease;
+  -moz-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 
 .ani-mid {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
   transition: all 1s ease;
 }
 
 .ani-slow {
+  -webkit-transition: all 1.5s ease;
+  -moz-transition: all 1.5s ease;
+  -o-transition: all 1.5s ease;
   transition: all 1.5s ease;
 }
 

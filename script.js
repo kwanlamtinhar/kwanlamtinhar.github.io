@@ -1,28 +1,7 @@
-var scifi = [
-    {"year": "1966", "name": "Star Trek"}
-    ,{"year": "1968", "name": "2001: A Space Odyssey"}
-    ,{"year": "1969", "name": "Journey to Sun"}
-    ,{"year": "1972", "name": "Solaris"}
-    ,{"year": "1977", "name": "Star Wars"}
-    ,{"year": "1977", "name": "Third Kind", "image": "Sci-Fi_1977ThirdKind.gif"}
-    ,{"year": "1979", "name": "Alien", "image": "Sci-Fi_1979Alien.jpg"}
-    ,{"year": "1982", "name": "Tron / daftpunk", "image": "Sci-Fi_1982Tron.jpg"}
-    ,{"year": "1997", "name": "Fifth Element", "image": "Sci-Fi_1997FifthElement.jpg"}
-    ,{"year": "1997", "name": "Contact"}
-    ,{"year": "2019", "name": "流浪地球"}
-    ,{"year": "2009", "name": "Moon"}
-    ,{"year": "2012", "name": "Prometheus"}
-    ,{"year": "2013", "name": "Gravity"}
-    ,{"year": "2014", "name": "Interstellar"}
-    ,{"year": "2015", "name": "The Martian"}
-    ,{"year": "2016", "name": "Arrival"}
-    ,{"year": "2019", "name": "Ad Astra"}
-    ,{"year": "2020", "name": "Dune"}
-    ,{"year": "2020", "name": "Proxima"}
-    ,{"year": "1959", "name": "The Sky Calls"}
-    ,{"year": "1969", "name": "Countdown"}
-    ,{"year": "1969", "name": "Marooned", "image": "Sci-Fi_1969JourneytoSun.jpg"}
-]
+// if ($(window).width()>500){
+//     $('meta[name=viewport]').remove();
+//     $('head').append( '<meta name="viewport" content="initial-scale=0.8">' );
+// }
 
 var data = [
     {"date": "2015AUG", 
@@ -265,7 +244,7 @@ function set_scroll() {
         if($(scrolls[index]).hasClass('tag')) change_content($(scrolls[index]).attr("id"),true);
         if($(scrolls[index]).hasClass('trigger')) change_char($(scrolls[index]).attr("id"),true);
     })
-    .addIndicators({name}) 
+    // .addIndicators({name}) 
     .addTo(controller);
     });
 
@@ -340,7 +319,8 @@ $(document).ready(function() {
 
     $('.twins').clone().appendTo('.content-wrapper');
 
-    $('.green').css('bottom', $( window ).height() - $('.bottom').offset().top+'px');
+    // $('.green').css('bottom', $('.myBody').height() - $('.bottom').offset().top+'px');
+    // console.log($('.myBody').height());
     set_char();
 
     set_slick('.slider');  

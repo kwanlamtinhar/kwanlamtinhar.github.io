@@ -244,7 +244,7 @@ function set_scroll() {
         if($(scrolls[index]).hasClass('tag')) change_content($(scrolls[index]).attr("id"),true);
         if($(scrolls[index]).hasClass('trigger')) change_char($(scrolls[index]).attr("id"),true);
     })
-    .addIndicators({name}) 
+    // .addIndicators({name}) 
     .addTo(controller);
     });
 

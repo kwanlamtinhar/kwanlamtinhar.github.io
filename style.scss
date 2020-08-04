@@ -15,6 +15,10 @@
     src: url(font/SentyTEA.ttf);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html{
     height: 100%;
     overflow: hidden;
@@ -174,17 +178,18 @@ body {
     transform: scaleY(1);
 }
 .twins {
-    width:100%;
-    height:100%;
     position: absolute;
     bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
     display: flex;
     align-items: center;
     padding:0px 8px;
 }
 .opened .twins{
     flex-direction: column;
-    padding:15px 15px;
+    // padding:15px 15px;
 }
 .content-wrapper{
     font-family: SentyTEA;
@@ -332,24 +337,27 @@ body {
     opacity: 0;
 }
 .ani-fast{
-    -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    -o-transition: all 0.6s ease;
-    transition: all 0.6s ease;
+    -webkit-transition: opacity 0.6s ease;
+    -moz-transition: opacity 0.6s ease;
+    -o-transition: opacity 0.6s ease;
+    transition: opacity 0.6s ease;
+    -webkit-transform: translateZ(0);
 }
 
 .ani-mid{
-    -webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: opacity 1s ease;
+    -moz-transition: opacity 1s ease;
+    -o-transition: opacity 1s ease;
+    transition: opacity 1s ease;
+    -webkit-transform: translateZ(0);
 }
 
 .ani-slow{
-    -webkit-transition: all 1.5s ease;
-    -moz-transition: all 1.5s ease;
-    -o-transition: all 1.5s ease;
-    transition: all 1.5s ease;
+    -webkit-transition: opacity 1.5s ease;
+    -moz-transition: opacity 1.5s ease;
+    -o-transition: opacity 1.5s ease;
+    transition: opacity 1.5s ease;
+    -webkit-transform: translateZ(0);
 }
 
 .fadeIn{
@@ -379,20 +387,13 @@ body {
     height: 10px;
     margin:0 3px;
 }
-// .slick-slide img {
-//     width:100%;
-//     height: var(--photoHeight);
-//     object-fit: contain;
-// }
 .slick-dots li button:before {
     opacity: .15;
 }
 .slick-dots li.slick-active button:before {
     opacity: .8;
 }
-// .opened .slick-slide img {
-//     height: var(--photoOpenHeight);
-// }
+
 
 .slick-slide {
     transition: all 0.3s ease ;

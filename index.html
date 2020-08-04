@@ -12,6 +12,8 @@
 
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
   <link href="bootstrap.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
 
@@ -19,6 +21,12 @@
 
 <body>
     <div class="myBody">
+
+      <div class="green">
+        <img src="img/fatgreen1.png" width="100px" height="auto">
+        <img src="img/greentext.png" width="120px" height="auto" style="transform: rotate(-6deg); margin-top:-10px">
+      </div>
+
       <div class="top">
         <img src="img/title1.png" width="230px" height="auto">
         <img src="img/title2.png" width="120px" height="auto" style="transform: translateX(40px);">
@@ -26,24 +34,49 @@
 
       <div class="timeline-container">
           <div class="timeline">
-              <!-- <div class="long-line">
-                  <img src="img/long_line.png" width="250px" height="auto">
-                  2015
-              </div> -->
         </div>  
       </div>
 
-      <div class="text-box-wrapper">
+      <div class="bottom">
+        <img class="arrow off" src="img/arrow.png" width="20px" height="auto">
         <img src="img/edge.png" width="100%" height="auto">
-        <div class="text-box"></div>
-        <img src="img/edge.png" width="100%" height="auto">      
-      </div>
+
+        <div class="content-wrapper">
+
+          <div class="transparent-top"><div class="transparent-right"></div></div>
+
+          <div class="text-default on ani-mid">Scroll to read our story.</div>
+          <div class="twins ani-mid off">
+
+            <div class="photo">
+              <div class="slider"></div>
+            </div>
+  
+            <div class="text-box">
+              <div class="text-tag" style="font-size: 18px;">#JustTheTwoOfUs</div>
+              <div class="text-date" style="font-size: 13px; margin-left: 15px;">2016JUN</div>
+              <div class="text-content" style="font-size: 15px;">我們的第一張合照，是在我們不知情的情況下被拍下的。那時的我並不知道，在離我這麼近的地方，有一個女生將會成為我生命中一個很重要的人。</div>
+             <!-- 我們的第一張合照，是在我們不知情的情況下被拍下的。那時的我並不知道，在離我這麼近的地方，有一個女生將會成為我生命中一個很重要的人。 -->
+         
+            </div> 
+
+        </div>
+        </div>
+
+        <img src="img/edge.png" width="100%" height="auto"> 
+        </div>
+        
 
     </div>
 
-    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>    -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js"></script>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>  
+         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

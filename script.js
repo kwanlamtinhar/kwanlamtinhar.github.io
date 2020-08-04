@@ -24,151 +24,334 @@ var scifi = [
     ,{"year": "1969", "name": "Marooned", "image": "Sci-Fi_1969JourneytoSun.jpg"}
 ]
 
-var reality = [
-    {"year": "1947", "name": "Roswell incident", "image": "Reality_1947Roswellincident.jpg"}
-    ,{"year": "1952", "name": "Washington incident", "image": "Reality_1952Washingtonincident.gif"}
-    ,{"year": "1958", "name": "NASA begins"}
-    ,{"year": "1961", "name": "蘇聯人類首次進入太空", "image": "Reality_1961蘇聯人類首次進入太空.jpg"}
-    ,{"year": "1962", "name": "Project Mercury 美國第一個載人太空飛行", "image": "Reality_1962ProjectMercury.jpg"}
-    ,{"year": "1969", "name": "Moon Landing", "image": "Reality_1969MoonLanding.jpg"}
-    ,{"year": "1970", "name": "阿波羅13號事故"}
-    ,{"year": "1971", "name": "禮炮一號 蘇聯歷史上第一個太空站", "image": "Reality_1971蘇聯禮炮一號.jpg"}
-    ,{"year": "1973", "name": "先鋒10號飛越過木星 人類首次對木星探測任務"}
-    ,{"year": "1984", "name": "列根星球大戰", "image": "Reality_1984列根星球大戰.jpg"}
-    ,{"year": "1986", "name": "挑戰者號災難"}
-    ,{"year": "1994", "name": "俄羅斯太空最長時間宇航員"}
-    ,{"year": "2002", "name": "SpaceX成立", "image": "Reality2002SpaceX成立.jpg"}
-    ,{"year": "2003", "name": "神舟五號楊利偉"}
-    ,{"year": "2003", "name": "哥倫比亞號災難"}
-    ,{"year": "2007", "name": "嫦娥一號探月衛星"}
-    ,{"year": "2008", "name": "Space X 獵鷹1號成功"}
-    ,{"year": "2011", "name": "首個太空實驗艙天宮一號"}
-    ,{"year": "2015", "name": "Space X 獵鷹9號事故"}
-    ,{"year": "2017", "name": "中國墨子號量子傳送實驗", "image": "Reality_2017中國墨子號量子傳送實驗.jpg"}
-    ,{"year": "2018", "name": "人工智慧機器人 Cimon"}
-    ,{"year": "2018", "name": "Mars Landing"}
-    ,{"year": "2019", "name": "U.S.Space Force"}
-    ,{"year": "2019", "name": "First Image of a Black Hole"}
-    ,{"year": "2019", "name": "嫦娥四號月球背面着陸"}
-    ,{"year": "2020", "name": "Space X Dragon"}
-    ,{"year": "2007", "name": "Fast radio burst"}
-]
+var data = [
+    {"date": "2015AUG", 
+    "tag": "#FirstPhoto",
+    "photo": ["firstphoto.jpg"], 
+    "content": "我們的第一張合照，是在我們不知情的情況下被拍下的。那時的我並不知道，在離我這麼近的地方，有一個女生將會成為我生命中一個很重要的人。"},
 
-var match_pair = [
-    {"scifi": "Star Trek", "reality": "中國墨子號量子傳送實驗"}
-    ,{"scifi": "2001: A Space Odyssey", "reality": "禮炮一號 蘇聯歷史上第一個太空站"}
-    ,{"scifi": "Star Wars", "reality": "列根星球大戰"}
-    ,{"scifi": "Alien", "reality": "SpaceX成立"}
-    ,{"scifi": "Contact", "reality": "Fast radio burst"}
-    ,{"scifi": "Moon", "reality": "嫦娥四號月球背面着陸"}
-    ,{"scifi": "Interstellar", "reality": "First Image of a Black Hole"}
-    ,{"scifi": "The Martian", "reality": "Mars Landing"}
-    ,{"scifi": "The Sky Calls", "reality": "Space X Dragon"}
-    ,{"scifi": "Countdown", "reality": "Moon Landing"}
-    ,{"scifi": "Marooned", "reality": "阿波羅13號事故"}
-    //fake
-    // ,{"scifi": "Gravity", "reality": "U.S.Space Force"}
-    // ,{"scifi": "Ad Astra", "reality": "Roswell incident"}
+    {"date": "2016JUN", 
+    "offset": "-10",
+    "tag": "#JustTheTwoOfUs",
+    "photo": ["twoppl.gif"], 
+    "content": "我們的第一張合照，是在我們不知情的情況下被拍下的。那時的我並不知道，在離我這麼近的地方，有一個女生將會成為我生命中一個很重要的人。"},
+
+    {"date": "2016JUN", 
+    "offset": "40",
+    "tag": "#FirstDate",
+    "photo": ["firstdate.jpeg"], 
+    "content": "我們的第一張合照，是在我們不知情的情況下被拍下的。那時的我並不知道，在離我這麼近的地方，有一個女生將會成為我生命中一個很重要的人。"},
+
+    {"date": "2016AUG", 
+    "tag": "#WeAreCouple",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2016SEP", 
+    "tag": "#FirstLittleB’sBD ",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2016DEC", 
+    "offset": "-10",
+    "tag": "#FirstNightTogether",
+    "photo": ["firstnight1.jpg","firstnight2.jpg"], 
+    "content": ""},
+
+    {"date": "2016DEC", 
+    "offset": "40",
+    "tag": "#FirstChristmas",
+    "photo": ["FirstChristmas1.jpg","FirstChristmas2.jpg","FirstChristmas3.jpg","FirstChristmas4.jpg"], 
+    "content": ""},
+
+    //2017
+
+    {"date": "2017JAN", 
+    "tag": "#FirstNewYear",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2017JUN", 
+    "tag": "#FirstLittle6’sBD",
+    "photo": ["6bd3.jpg","6bd4.jpg","6bd2.gif","6bd1.gif",],
+    "content": ""},
+
+    {"date": "2017SEP", 
+    "tag": "#FirstTrip@Osaka",
+    "photo": [], 
+    "content": ""},
+
+    //2018
+
+    {"date": "2018JAN", 
+    "offset": "-10",
+    "tag": "#Trip@Taichung",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2018JAN", 
+    "offset": "40",
+    "tag": "#EndyConcert",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2018APR", 
+    "tag": "#Trip@KL",
+    "photo": [], 
+    "content": ""},
+
+
+    {"date": "2018SEP", 
+    "tag": "#Trip@Tokyo",
+    "photo": [], 
+    "content": ""},
+
+    //2019
+
+    {"date": "2019MAR", 
+    "tag": "#FirstBreakup",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2019JUL", 
+    "tag": "#SummerExchange",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2019AUG", 
+    "tag": "#Trip@Europe",
+    "photo": [], 
+    "content": ""},
+
+    {"date": "2019OCT", 
+    "tag": "#OurFirstJob",
+    "photo": [],  
+    "content": ""},
+
+
+
+
+
 ]
 
 var months = [
     "JAN", "FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"
 ]
 
-function add_months(start,end){
+var bottom_opened = false;
+var sliderOn = false;
+var offSliderOn = false;
+
+var imgAll = [];
+var imgAttr = {}
+
+function add_to_preload(){
+    for (i = 0; i < data.length; i++){
+        for(j=0;j<data[i].photo.length;j++){
+            imgAll.push('photo/'+data[i].photo[j]);
+        }
+    }
+}
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        const img = new Image();
+        img.onload = function() {
+            var mode;
+            if(this.width>this.height) mode = 'longWidth'; else mode = 'longHeight';
+            imgAttr[img.src] = mode;
+        }
+        img.src = this;
+    });
+    // console.log(imgAttr);
+}
+
+
+
+function add_months(year,start,end){
     $('.timeline').append( '<div class="month-wrapper"></div>');
         for (i = start-1; i < end;i++){
-            $('.month-wrapper').last().append( '<div class="month"></div>');
-            $('.month').last().append( '<div class="month-text">'+months[i]+'</div>');
-            if(i%2>0) $('.month-text').last().css("transform", "translateX(16px)");
-            else $('.month-text').last().css("transform", "translateX(-100%)");
+            $('.month-wrapper').last().append( '<div id="'+year+months[i]+'" class="month-row"></div>');
+            $('.month-row').last().append( '<div class="month"></div>');
+            $('.month').last().append( '<div class="month-text"></div>');
+            $('.month-text').last().append( '<div class="month-small">'+months[i]+'</div>');
+            // $('.month-text').last().append( '<div class="month-small animate fadeIn ani-slow">'+months[i]+'</div>');
+            $('.month-small').last().css("--offset","-120")
+            if(i%2>0) $('.month-text').last().addClass('right-side');
+            else $('.month-text').last().addClass('left-side');
         }   
 }
 function set_timeline() {
     $('.timeline').append( '<div class="year">'+(2015)+'</div>');
-    add_months(5,5);  
+    add_months(2015,8,9);  
 
     $('.timeline').append( '<div class="year">'+(2016)+'</div>');
     $('.timeline').append( '<div class="month-wrapper"></div>');
-    add_months(6,12);  
+    add_months(2016,6,12);  
 
     for (j = 0; j < 3; j++){
-        console.log(j);
-        $('.timeline').append( '<div class="year">'+(2017+j)+'</div>');
-        add_months(6,12);         
+        var myyear = 2017+j;
+        $('.timeline').append( '<div class="year">'+myyear+'</div>');
+        add_months(myyear,1,12);         
     }
 
     $('.timeline').append( '<div class="year">'+(2020)+'</div>');
-    add_months(1,8);   
+    add_months(2020,1,8);   
 
 };
 
-// set_timeline();
+function set_tag(){
+    for (i = 0; i < data.length; i++){
+        $('#'+data[i].date).find('.month-text').append('<div class="tag animate fadeIn ani-fast">'+data[i].tag+'</div>');
+        $('.tag').last().attr( "id", 'tag-'+i );
+        if (data[i].offset) $('.tag').last().css("--offset",data[i].offset);
+    }
+}
+
+function set_slick(a){
+    $(a).slick({
+        dots: true,
+        arrows: false,
+      });
+}
 
 $(document).ready(function() {
+    add_to_preload();
+    preload(imgAll);
+
+
     set_timeline();
-    $('.month:not(:last-child)').after('<img src="img/line.png" height="45px" width="auto" style="margin: 3px">');
+    $('.timeline').css("margin-top",$('.timeline-container').height()*0.5+'px');
+    $('.timeline').css("margin-bottom",$('.timeline-container').height()*0.6+'px');
+    $('.month-row').after('<img src="img/line.png" height="55px" width="auto" style="margin: 3px">');
+
+    set_tag();
+
+    var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
+    $('.timeline-container').css("--height",middle_height+'px');
+    $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
+
+    set_scroll();   
+
+    $('.twins').clone().appendTo('.content-wrapper');
+
+    $('.green').css('bottom', $( window ).height() - $('.bottom').offset().top+'px');
+    
+    set_slick('.slider');  
 });
 
-$("#match-button").click(function(){
-    if (info_showed){
-        info_showed=false;
-        $("#info").removeClass("show");
+$('.arrow').click(function() {
+    $('.arrow').css("pointer-events","none");
+    if(!bottom_opened) {
+        $(".twins.on").removeClass("ani-mid");
+        $(".twins.on").animate({
+            opacity: 0,
+          }, 300, function() {
+            $('.on .slick-slider').slick('refresh');
+            $('body').addClass('opened');
+            setTimeout(function() { 
+                $(".twins.on").animate({
+                    opacity: 1,
+                  }, 300, function() {
+                    $('.arrow').css("pointer-events","unset");
+                    $('.timeline-container').css("pointer-events","none");
+                   });
+            }, 700);
+          });
+    }
+    else {
+        $(".twins.on").animate({
+            opacity: 0,
+          }, 300, function() {
+            $('.on .slick-slider').slick('refresh');
+            $('body').removeClass('opened');
+            setTimeout(function() { 
+                $(".twins.on").animate({
+                    opacity: 1,
+                  }, 300, function() {
+                 $(".twins.on").addClass("ani-mid");
+                 $('.arrow').css("pointer-events","unset");
+                 $('.timeline-container').css("pointer-events","unset");
+                 $('.twins.on').css("opacity","");
+                });
+            }, 700);
+          });
     }
 
-    matched = !matched;
-    choose_part();
-    
-    if (matched){
-        the_match = dat[part_selected][item_selected[part_selected]].match;
-        if (typeof the_match=="undefined") {
-            item_selected[1-part_selected] = item_selected[part_selected];
-        }
-        else {
-            $("body").addClass("matched");
-            item_selected[1-part_selected] = the_match;
+    bottom_opened = !bottom_opened;
+});
 
-            $(".part").each(function(index) {
-                $(this).append("<div class='no-scroll'></div>");
-                $(this).find(".no-scroll").width($(this).width()).height($(this).height()).offset($(this).offset());
-                the_image = dat[index][item_selected[index]].image;
-                if (typeof the_image =="undefined") $(this).css("--myBg",bg[index]);
-                else $(this).css("--myBg", "url('img/bg/" + dat[index][item_selected[index]].image);
-            });
+function set_scroll() {
+    var controller = new ScrollMagic.Controller({container: ".timeline-container"})
 
-            the_image = dat[part_selected][item_selected[part_selected]].image;
-            $("#info-small").find('.swiper-slide').each(function(){
-                if (typeof the_image =="undefined") $(this).css('background-image', bg[item_selected[part_selected]%3]);
-                else $(this).css('background-image', "url('img/bg/" + dat[part_selected][item_selected[part_selected]].image);
-            });
+    var animateElements = $(".animate")
 
-            $("#year-gap").html(Math.abs(dat[part_selected][item_selected[part_selected]].year - dat[1-part_selected][item_selected[1-part_selected]].year));
+    $('.animate').each(function(index){
+        var myOffset = 0;
+        if($(this).css("--offset")!="undefined") myOffset = $(this).css("--offset");
+        new ScrollMagic.Scene({
+            triggerElement: animateElements[index],
+            offset: myOffset,												 
+            triggerHook: 0.45,
+    })
+    .setClassToggle(animateElements[index], "animated")
+    .on("enter", function (e) {
+        if($(animateElements[index]).hasClass('tag')) change_content($(animateElements[index]).attr("id"));
+    })
+    .on("leave", function (e) {
+        if($(animateElements[index]).hasClass('tag')) change_content($(animateElements[index]).attr("id")-1);
+    })
+    // .addIndicators({name}) 
+    .addTo(controller);
+    });
 
-            $(".list").each(function(index) {
-                //hide others
-                $(this).find(".list-item").not(':eq('+item_selected[index]+')').removeClass("selected");
-                $(this).find(".list-item").eq(item_selected[index]).addClass("selected");
+}
 
-                //scroll list
-                var diff = $(this).find(".list-item").eq(item_selected[index]).find(".item-content").offset().top - the_pos ;
-                $(this).animate(
-                    {
-                    scrollTop: $(this).scrollTop() + diff ,
-                    },
-                    600
-                );
-            });
-        }
+var imgCount;
+var imgLength;
+var saveOff;
+
+function change_content(theId){
+    id = theId.split("-")[1];
+    console.log(id);
+
+    if (id==-1) {
+        $(".twins.on").removeClass("on").addClass("off");
+        $(".text-default").removeClass("off").addClass("on");
+        $(".arrow").removeClass("on").addClass("off");
     }
     else{
-        $("body").removeClass("matched");
-        $(".part").each(function(index) {
-            $(this).find(".no-scroll").remove();
-            $(this).css("--myBg",'none');
-        });
+        $(".arrow.off").removeClass("off").addClass("on");
+        $(".text-default.on").removeClass("on").addClass("off");
+
+            var off = $(".twins.off").first();
+            $(off).find('.text-tag').html(data[id].tag);
+            $(off).find('.text-date').html(data[id].date);
+            $(off).find('.text-content').html(data[id].content);
+            $(off).find('.slick-slider').slick('unslick');
+            $(off).find('.photo').remove();
+            // $(off).find('.slider').empty();
+
+            if(data[id].photo.length>0) {
+                $(off).prepend('<div class="photo"><div class="slider"></div></div>');
+
+                for(i=0;i<data[id].photo.length;i++){
+                    var img = new Image();
+                    img.src = "photo/" +data[id].photo[i];
+                    var mode = imgAttr[img.src];
+                    // console.log(mode);
+                    $(off).find('.slider').append('<div class="slider-img-container"><div class="slider-img-center"><div class="img-transparent-right"><img class="'+mode+' img-transparent-top" src="'+img.src+'"></div></div></div>');
+                }
+
+                if(data[id].photo.length>1) {
+                    set_slick($(off).find('.slider'));
+                    sliderOn = true;
+                }
+
+            }  
+            
+            $(".twins.on").removeClass("on").addClass("off");
+            $(off).removeClass("off").addClass("on");
+         
     }
-});
-
-
-
-
+}

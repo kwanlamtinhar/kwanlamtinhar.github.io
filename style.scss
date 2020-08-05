@@ -63,6 +63,9 @@ body {
     background-image: url('img/bg.jpg');
     background-size: cover;
 }
+.hide{
+    display: none;
+}
 .top{
     width:100%;
     display: flex;
@@ -72,7 +75,7 @@ body {
 }
 .timeline-container-outer{
     margin: 5px 0;
-    width:80%;
+    width:90%;
     overflow: hidden;
     --height: 300px;
     height:var(--height);
@@ -122,6 +125,11 @@ body {
     // background-color: rgba(0,0,0,0.1);
     margin-left: auto;
     margin-right: auto;
+
+    -webkit-mask-image: linear-gradient(to bottom,rgba(0,0,0,1) 92%,rgba(0,0,0,0) 100%);
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top;
 }
 .year {
     // font-family: Moon Flower;
@@ -336,7 +344,7 @@ body {
     flex: 1;
 }
 .text-box{
-    padding: 20px 35px 20px 20px;
+    padding: 10px 25px 10px 10px;
     margin-left: 15px;
     display: flex;
     flex-direction: column;
@@ -353,10 +361,10 @@ body {
     -webkit-mask-position: top;
 }
 .opened .text-box{
-    flex: unset;
+    padding: 20px 35px 20px 20px;
     margin-top:25px;
-    height:300px;
-    width:100%;
+    // height:300px;
+    // width:100%;
 }
 .slider-img-container{
     width:100%;

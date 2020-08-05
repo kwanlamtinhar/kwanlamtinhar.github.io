@@ -323,8 +323,6 @@ function change_content(theId,back){
 }
 
 $(document).ready(function() {
-    add_to_preload();
-    preload(imgAll);
 
     var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
     $('.timeline-container-outer').css("--height",middle_height+'px');
@@ -351,6 +349,9 @@ $(document).ready(function() {
     setTimeout(function() { 
         $('.green').addClass('animated');
     }, 500);
+
+    add_to_preload();
+    preload(imgAll);
 });
 
 $('.arrow-button').click(function() {

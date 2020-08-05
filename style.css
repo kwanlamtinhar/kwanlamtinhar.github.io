@@ -63,6 +63,9 @@ body {
   height: 100%;
   background-image: url("img/bg.jpg");
   z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hide {
@@ -81,8 +84,7 @@ body {
   margin: 5px 0;
   width: 90%;
   overflow: hidden;
-  --height: 300px;
-  height: var(--height);
+  height: 300px;
 }
 
 .timeline-container {

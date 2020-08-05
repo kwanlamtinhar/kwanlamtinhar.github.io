@@ -116,14 +116,6 @@ body {
   height: 20px;
 }
 
-.trig-lam {
-  background-color: red;
-}
-
-.trig-green {
-  background-color: green;
-}
-
 .timeline-container::-webkit-scrollbar {
   width: 0px;
   background: transparent;
@@ -141,6 +133,15 @@ body {
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: top;
+}
+
+.end-text {
+  margin-left: auto;
+  margin-right: auto;
+  font-family: SentyTEA;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1;
 }
 
 .year {
@@ -509,6 +510,21 @@ body {
     transform: rotate(0deg);
   }
 }
+@keyframes crown-up {
+  0% {
+    top: 0;
+  }
+  45% {
+    top: -4px;
+  }
+  90% {
+    top: 0;
+  }
+}
+.crown {
+  animation: crown-up 0.8s ease infinite;
+}
+
 .green-img {
   display: inline-block;
   height: 135px;

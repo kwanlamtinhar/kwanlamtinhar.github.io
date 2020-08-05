@@ -113,7 +113,12 @@ var data = [
     "photo": [],  
     "content": "來到2020年了，不止對這個世界來說，還是對於我們的關係來說，也是充滿不愉快的一年。在年頭的這段時間，其實我是過得很不愉快的，我想你也感覺得到吧。因為我自己的煩惱，令我很多時候忽略了好好去照顧妳，讓妳慢慢地對我感覺變啖，可能也很合理吧。我知道，妳很難理解我有什麼煩惱，你經常說你每天上班才應該有壓力吧，我每天在家中可以有什麼壓力。的確，在你的角度，這樣想也是很合理的吧。謝謝你，在這段時間裡，也繼續陪伴著我，吃飯、買什麼也會借錢給我，很感謝你。我很多時候都喜歡裝沒事，其實我內心很感動、也很掙扎。我真的很希望，可以有能力給你好的生活，所以我最後選擇了一個未來有更多機會賺更多錢的行業。我單純地以為，當我有了工作，一切的事情都會慢慢重回正軌吧，但很可惜地，在我開始上班的一個星期前，我們便分開了。"},
 
-
+     //end
+     {"date": "2020APR", 
+     "tag": "",
+     "photo": [],  
+     "content": "跟妳分享一下，我在我們分開之後的生活吧。我在新公司上班也一個半月了，感覺也不錯，老闆人也不差，每天也可以準時下班。荔枝角離我家我車程很近，比起九龍灣好太多了哈哈。現在的工作也沒什麼壓力，不像以前那樣經常想著辭職了哈哈。不過我想我可能半年後也要找新工作了，因為始終這裡的人工以it來說真的太低了，而it的職位持續都有很多。始終錢還是很重要吧，如果想要照顧好別人的話。可能妳不太相信，但我想這麼幼稚的我也被逼著變成熟一點了哈哈。<br>另外，我也開始和一些以前的朋友重新聯絡了。我知道，真的不可以像以前那樣封閉自己了。我也很高興地發現，其實這個世界真的有很多好的人，會願意關心我、幫助我，只是我以前太喜歡待在自己的comfort zone吧。我也開始會上ig看看別人在幹什麼，開始想關心一下周遭的人的生活，也開始記起原來year 1時的我也曾經是個喜歡交朋友的人哈哈，感覺真的很遙遠。<br>還有一點很想分享的！我已經成功養成了持續運動的習慣了！現在wfh雖然不能出去，但反而更多時間再家中workout。我真的有持續努力做喔，不像是以前那樣只是嘴上說說。目前來說減肥的效果還不太明顯，但體能已好了不少，不會再經常覺得很累了。<break>很諷刺的是，在失去了妳之後，除了愛情，我的生活好像都是往一個更好的方向去成長。原來我可以早點學懂這些，可能我便會是一個更好的人，妳也不會離開我吧。真的很抱歉、也很後悔，還和妳在一起的時候，我太依賴妳，變得越來越頹廢，不再是妳當初喜歡的那個我了吧。<break>當然，分開了之後，還是不開心的時間佔了大多數吧。很對不起，很多時候太想念妳，忍不住send一些無謂的message給你，也有忍不住打給妳。妳也應該，很積極地開展妳的新生活吧。<break>最後，真的很想跟妳說，我還是很愛很愛很愛妳。妳願意給我一個機會再去對妳好，去照顧妳嗎？這一次，我真的真的會，好好珍惜的。<break>我知道，妳選擇離開的決定，我沒有權利也沒有能力去改變。我想妳知道，我會繼續隨時待命的。如果妳有天有什麼事情感到不愉快，或者想要人陪伴，我可以馬上出現，好像以前那樣用小劇場氹你。即使妳不願意這樣，我也不希望我們成為永遠不再見的陌生人，我們可能可以成為偶爾聯絡的朋友吧。哈哈我也知道有很多情侶分手之後也會復合的，我不是說我會抱著很大的希望，但我的內心還沒把我們倆說死吧。可能一年後，可能三年後，可能十年後，還是有可能的吧。可能以後的妳，經歷了幾段戀情，我也變成一個更好更成熟更有能力的人，我們可以重新再一起嗎？哈哈，還是不要想太多了。<break>謝謝妳，我真的學懂了，不可以再沉溺於過去，而是要為未來好好去努力。希望這會是我對我們的關係，最後的一次回顧了。不管未來的妳會否跟我再一起，也會是一個全新的未來了，過去的快樂與不快樂，都只是推動我們成長的經歷。<break>劉浩琳，我是真的真的真的很愛妳喔<br>這種感覺，可能一輩子也不會改變吧<br>Mika gus makkam，小b女<br>妳也要記得我的好，知道嗎？"},
+ 
 ]
 
 var months = [
@@ -283,10 +288,17 @@ function change_content(theId,back){
             var off = $(".twins.off").first();
             $(off).find('.text-tag').html(data[id].tag);
             $(off).find('.text-date').html(data[id].date);
-            $(off).find('.text-content').html(data[id].content);
+            $(off).find('.text-content').empty();
+            var the_content = data[id].content.split("<break>");
 
-            if(id==data.length-1){
-                $(off).find('.text-tag').html("#2020");
+            for(i=0;i<the_content.length;i++){
+                $(off).find('.text-content').append('<p>'+the_content[i]+'</p>');
+            }
+            
+
+            if(id>=data.length-2){
+                if(id>=data.length-2)$(off).find('.text-tag').html("#2020");
+                if(id>=data.length-1)$(off).find('.text-tag').html("I still wanna tell you...");
                 $(off).find('.text-date').addClass('hide');
             }
             else $(off).find('.text-date').removeClass('hide');
@@ -352,7 +364,7 @@ $(window).on('load', function () {
     var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
     $('.timeline-container-outer').css("height",middle_height+'px');
     $('.timeline').css("margin-top",middle_height*0.3+'px');
-    $('.timeline').css("margin-bottom",middle_height*0.6+'px');
+    $('.timeline-container').css("padding-bottom",middle_height*0.6+'px');
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
 
     $('.loading').fadeOut();

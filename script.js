@@ -323,7 +323,7 @@ $(document).ready(function() {
     set_tag();
 
     var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
-    $('.timeline-container').css("--height",middle_height+'px');
+    $('.timeline-container-outer').css("--height",middle_height+'px');
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
 
     set_scroll();   

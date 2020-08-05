@@ -63,11 +63,17 @@ body {
   margin-top: 25px;
 }
 
-.timeline-container {
+.timeline-container-outer {
   margin: 5px 0;
   width: 80%;
+  overflow: hidden;
   --height: 300px;
   height: var(--height);
+}
+
+.timeline-container {
+  width: 100%;
+  height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

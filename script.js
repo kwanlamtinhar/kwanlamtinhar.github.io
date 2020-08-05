@@ -29,7 +29,7 @@ var data = [
     {"date": "2016SEP", 
     "tag": "#FirstLittleB’sBD ",
     "photo": [], 
-    "content": "這是我第一次和妳過生日，這可以說是我最大的污點吧哈哈。我什麼也沒準備，完全沒有認真想想如何令妳的生日過得開心。但這也可能是我們關係的轉捩點，從這時開始，妳慢慢讓我學會，怎樣去愛一個人，怎樣去對一個人好。我也開始明白，怎樣去對一個人好。"},
+    "content": "這是我第一次和妳過生日，這可以說是我最大的污點吧哈哈。我什麼也沒準備，完全沒有認真想想如何令妳的生日過得開心。但這也可能是我們關係的轉捩點，從這時開始，妳慢慢讓我學會，怎樣去愛一個人。我也開始明白，怎樣去對一個人好。"},
 
     {"date": "2016DEC", 
     "offset": "-10",
@@ -345,14 +345,15 @@ $(document).ready(function() {
     add_to_preload();
     preload(imgAll);
 
+});
+
+$(window).on('load', function () {
     var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
     $('.timeline-container-outer').css("height",middle_height+'px');
     $('.timeline').css("margin-top",middle_height*0.3+'px');
     $('.timeline').css("margin-bottom",middle_height*0.6+'px');
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
-});
-
-$(window).on('load', function () {
+    
     $('.loading').fadeOut();
 });
 

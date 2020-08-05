@@ -70,6 +70,7 @@ body {
   height: var(--height);
   overflow-x: hidden;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 15%, black 70%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
@@ -306,6 +307,7 @@ body {
   height: 100%;
   width: 58%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 12%, black 88%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;

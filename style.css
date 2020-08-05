@@ -409,7 +409,7 @@ body {
 
 .opened .text-box {
   padding: 20px 35px 20px 20px;
-  margin-top: 25px;
+  margin-top: 10px;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 4%, black 96%, rgba(0, 0, 0, 0) 100%);
 }
 

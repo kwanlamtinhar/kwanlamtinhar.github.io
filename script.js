@@ -153,7 +153,6 @@ function set_char(){
 }
 
 function change_char(theId,back){
-    // alert('df');
     id = theId.split("-")[1];
     // if (back) id--;
 
@@ -318,16 +317,16 @@ $(document).ready(function() {
     add_to_preload();
     preload(imgAll);
 
+    var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
+    $('.timeline-container-outer').css("--height",middle_height+'px');
 
     set_timeline();
-    $('.timeline').css("margin-top",$('.timeline-container').height()*0.5+'px');
-    $('.timeline').css("margin-bottom",$('.timeline-container').height()*0.6+'px');
+    $('.timeline').css("margin-top",middle_height*0.3+'px');
+    $('.timeline').css("margin-bottom",middle_height*0.6+'px');
     $('.month-row').after('<img src="img/line.png" height="55px" width="auto" style="margin: 3px">');
 
     set_tag();
 
-    var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
-    $('.timeline-container-outer').css("--height",middle_height+'px');
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
 
     set_scroll();   

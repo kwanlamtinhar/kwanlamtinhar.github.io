@@ -117,7 +117,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 200px;
+    // padding-bottom: 200px;
     padding-right: 15px;
     // background-color: rgba(0,0,0,0.1);
     margin-left: auto;
@@ -182,6 +182,26 @@ body {
     justify-content: flex-end;
     align-items: center;
 }
+.scroll-up{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    font-family: Hosohuwafont;
+    transition: opacity 0.3s ease;
+    margin-bottom: 40px;
+    height:60px;
+}
+.scroll-up .arrow{
+    transform: scaleY(-1);
+    animation: arrow-jumpUp 0.8s infinite;
+}
+@keyframes arrow-jumpUp {
+    0%   {margin-top: 0;}
+    30%  {margin-top: 6px;}
+    60% {margin-top: 0;}
+  }
+
 .arrow-button{
     display: flex;
     flex-direction: column;
@@ -190,7 +210,7 @@ body {
     font-family: Hosohuwafont;
     transition: opacity 0.3s ease;
 }
-.arrow{
+.arrow-button .arrow{
     transform: scaleY(-1);
     animation: arrow-jump 0.8s infinite;
 }
@@ -290,7 +310,7 @@ body {
 .scroll-arrow{
     position: absolute;
     top:0;
-    right:9px;
+    right:5px;
     height:100%;
     width: 11px;
     display: flex;

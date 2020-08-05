@@ -224,8 +224,8 @@ function set_tag(){
 
 function set_slick(a){
     $(a).slick({
-        dots: true,
-        arrows: false,
+        dots: false,
+        arrows: true,
       });
 }
 

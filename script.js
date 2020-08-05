@@ -217,6 +217,10 @@ function set_timeline() {
         $('.trigger').last().attr("id","green-"+(i+1));
     }
 
+    var end = $('.end-text');
+    $(end).clone().appendTo('.timeline');
+    $(end).remove();
+
 };
 
 function set_tag(){
@@ -340,6 +344,7 @@ $(document).ready(function() {
     set_timeline();
     
     $('.month-row').after('<img src="img/line.png" height="55px" width="auto" style="margin: 3px">');
+    $('.month-wrapper img').last().addClass('end-transparent');
 
     set_tag();
 
@@ -364,7 +369,7 @@ $(window).on('load', function () {
     var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
     $('.timeline-container-outer').css("height",middle_height+'px');
     $('.timeline').css("margin-top",middle_height*0.3+'px');
-    $('.timeline-container').css("padding-bottom",middle_height*0.6+'px');
+    $('.end-text').css("margin-bottom",middle_height*0.6+'px');
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
 
     $('.loading').fadeOut();

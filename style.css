@@ -17,6 +17,7 @@
 }
 *, *::before, *::after {
   box-sizing: border-box;
+  -webkit-transform: translateZ(0);
 }
 
 html {
@@ -129,7 +130,10 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  -webkit-mask-image: linear-gradient(to bottom, black 92%, rgba(0, 0, 0, 0) 100%);
+}
+
+.end-transparent {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0) 95%);
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: top;

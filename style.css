@@ -55,6 +55,16 @@ body {
   }
 }
 
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("img/bg.jpg");
+  z-index: 9999;
+}
+
 .hide {
   display: none;
 }
@@ -106,6 +116,11 @@ body {
 
 .trig-green {
   background-color: green;
+}
+
+.timeline-container::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 .timeline {
@@ -393,6 +408,7 @@ body {
 .opened .text-box {
   padding: 20px 35px 20px 20px;
   margin-top: 25px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 4%, black 96%, rgba(0, 0, 0, 0) 100%);
 }
 
 .slider-img-container {

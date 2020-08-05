@@ -323,6 +323,7 @@ function change_content(theId,back){
 }
 
 $(document).ready(function() {
+    $('.twins').clone().appendTo('.content-wrapper');
 
     var middle_height = $('.bottom').offset().top - $('.top').offset().top - $('.top').height();
     $('.timeline-container-outer').css("--height",middle_height+'px');
@@ -337,9 +338,6 @@ $(document).ready(function() {
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
 
     set_scroll();   
-
-    $('.twins').clone().appendTo('.content-wrapper');
-
     // $('.green').css('bottom', $('.myBody').height() - $('.bottom').offset().top+'px');
     // console.log($('.myBody').height());
     set_char();
@@ -354,6 +352,10 @@ $(document).ready(function() {
     preload(imgAll);
 });
 
+$(window).on('load', function () {
+    $('.loading').fadeOut();
+});
+
 $('.arrow-button').click(function() {
     $('.arrow-button').css("pointer-events","none");
     $('.arrow-button').addClass('touched');
@@ -365,9 +367,9 @@ $('.arrow-button').click(function() {
             $('.arrow-button').removeClass('touched')
             $('.on .slick-slider').slick('refresh');
             $('body').addClass('opened');
-            if ($('.on .text-box').prop('offsetHeight') < $('.on .text-box').prop('scrollHeight')) $('.on .scroll-arrow').css("opacity","1");
-                else $('.on .scroll-arrow').css("opacity","0");
             setTimeout(function() { 
+                if ($('.on .text-box').prop('offsetHeight') < $('.on .text-box').prop('scrollHeight')) $('.on .scroll-arrow').css("opacity",1);
+                else $('.on .scroll-arrow').css("opacity",0);
                 $(".twins.on").animate({
                     opacity: 1,
                   }, 300, function() {

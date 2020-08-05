@@ -213,8 +213,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 30px;
-  font-family: Hosohuwafont;
+  font-size: 34px;
+  font-family: Moon Flower;
   transition: opacity 0.3s ease;
   margin-bottom: 40px;
   height: 60px;
@@ -309,12 +309,13 @@ body {
 }
 
 .text-default {
+  font-family: Moon Flower;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .opened .content-wrapper {
@@ -476,6 +477,16 @@ body {
   padding-bottom: 5px;
 }
 
+.lamlam {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 215px;
+  left: 15px;
+  padding-bottom: 5px;
+}
+
 @keyframes shake {
   0% {
     transform: rotate(0deg);
@@ -487,19 +498,45 @@ body {
     transform: rotate(0deg);
   }
 }
+@keyframes lam-shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-3deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
 .green-img {
   display: inline-block;
   height: 135px;
   position: relative;
   opacity: 0.8;
   margin-right: 100px;
-  animation: shake 1.3s ease infinite;
+  animation: shake 1.3s ease 0.7s infinite;
 }
 
 .green-img img {
   position: absolute;
   top: 0;
   transform: rotate(-1deg);
+}
+
+.lamlam-img {
+  display: inline-block;
+  height: 125px;
+  position: relative;
+  opacity: 0.8;
+  margin-right: 130px;
+  animation: lam-shake 1.3s ease infinite;
+}
+
+.lamlam-img img {
+  position: absolute;
+  top: 0;
+  transform: rotate(-3deg);
 }
 
 .char-text {

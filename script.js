@@ -72,7 +72,7 @@ var data = [
     "offset": "40",
     "tag": "#EndyConcert",
     "photo": ["endy1.jpg","endy3.jpg","endy2.jpg"], 
-    "content": "這可以想是，妳給過我的其中一個最大的驚喜了。我還記得你給我那張票時，我心中那激動又混亂的心情。那時的我完全不敢相信，原來這世界有人會對我這麼好，有人會願意為了我，花心思去準備一個驚喜。真的真的很感謝你，讓我知道原來我真的可以找到一個願意愛我的人。"},
+    "content": "這可以說是，妳給過我的其中一個最大的驚喜了。我還記得你給我那張票時，我心中那激動又混亂的心情。那時的我完全不敢相信，原來這世界有人會對我這麼好，有人會願意為了我，花心思去準備一個驚喜。真的真的很感謝你，讓我知道原來我真的可以找到一個願意愛我的人。"},
 
     {"date": "2018APR", 
     "tag": "#Trip@KL",
@@ -203,12 +203,12 @@ function set_timeline() {
     add_months(2020,1,4);   
 
     for(i=0;i<5;i++){
-        $('.timeline').append('<div class="trigger scroll trig-lam"></div>');
-        $('.trigger').last().css("top", 850*i + 400 + "px");
-        $('.trigger').last().attr("id","lam-"+ (i+1));
+        // $('.timeline').append('<div class="trigger scroll trig-lam"></div>');
+        // $('.trigger').last().css("top", 850*i + 400 + "px");
+        // $('.trigger').last().attr("id","lam-"+ (i+1));
 
         $('.timeline').append('<div class="trigger scroll trig-green"></div>');
-        $('.trigger').last().css("top", 850*i + 800+ "px");
+        $('.trigger').last().css("top", 850*i + 500+ "px");
         $('.trigger').last().attr("id","green-"+(i+1));
     }
 
@@ -338,9 +338,10 @@ $(document).ready(function() {
 
     set_slick('.slider');  
 
-    setTimeout(function() { 
-        $('.green').addClass('animated');
-    }, 500);
+    // setTimeout(function() { 
+    //     $('.green').addClass('animated');
+    //     $('.lamlam').addClass('animated');
+    // }, 500);
 
     add_to_preload();
     preload(imgAll);
@@ -353,7 +354,7 @@ $(window).on('load', function () {
     $('.timeline').css("margin-top",middle_height*0.3+'px');
     $('.timeline').css("margin-bottom",middle_height*0.6+'px');
     $('.content-wrapper').css("--opened-height" , $('.content-wrapper').height()+middle_height+'px');
-    
+
     $('.loading').fadeOut();
 });
 

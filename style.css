@@ -71,6 +71,8 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  padding-right: 15px;
+  margin-right: -15px;
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 15%, black 70%, rgba(0, 0, 0, 0) 100%);
   -webkit-mask-size: 100%;
   -webkit-mask-repeat: no-repeat;
